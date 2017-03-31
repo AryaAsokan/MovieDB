@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app = "movieApp">
+	<head>
+		<title>Movie Buzz</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+        <script type="text/javascript" src = "controllers/app.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+	</head>
+	<body ng-controller = "mainController as mainCtrl">
+		<div class = "panel panel-default">
+			<div class = "panel-body">Movie Buzz</div>
+		</div>
+		<div class = "view" ><input type = "textbox" id = "search-bar" ng-model = "search" placeholder = "Enter a movie name">
+			<!--span class="glyphicons glyphicons-search"></span-->
+<button class = "btn btn-primary" ng-click = "mainCtrl.getMovie()"><span class="glyphicon glyphicon-search"></span>Search Movies</button>
+<div ng-show = "details">
+	<h2>{{details.Title}}</h2><h4>{{details.Year}}</h4>
+	<div class = "quick-view">
+		<div><img src= {{details.Poster}}></div>
+		<div class = "details">
+			<ul><li><b>Starring:</b>{{details.Actors}}</li>
+				<li><b>Country:</b>{{details.Country}}</li>
+				<li><b>Box Office:</b>{{details.BoxOffice}}</li>
+				<li><b>Director:</b>{{details.Director}}</li>
+				<li><b>Language:</b>{{details.Language}}</li>
+				<li><b>Genre:</b>{{details.Genre}}</li>
+				<li><b>Production:</b>{{details.Production}}</li>
+				<li><b>Rating:</b>{{details.imdbRating}}</li>
+			</ul>
+		</div>
+	</div>
+	<div class = "plot">
+		<p><b>Plot : </b>{{details.Plot}}</p>
+	</div>
+	<div class = "related">
+		<b>Related Movies</b>
+		<ul>
+			<li ng-repeat = "movie in related.Search">
+				<a href="#related"><b>{{movie.Title}}</b></a>,{{movie.Year}}
+			</li>
+		</ul>			
+	</div>
+</div>	
+</div>
+			
+	</body>
+</html>

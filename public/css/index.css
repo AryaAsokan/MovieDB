@@ -1,0 +1,25 @@
+.panel-default{
+	background-color: #17a785;
+}
+.panel-body {
+	color : white;
+}
+.view {
+	padding: 5%;
+}
+body {
+	background-color: #d6d6d6;
+}
+h2 {
+	color : #17a785;
+}
+
+.quick-view {
+	display: inline-flex;
+}
+.details {
+	margin :2%;
+}
+.plot {
+	margin-top: 2%;
+}
