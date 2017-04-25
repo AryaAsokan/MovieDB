@@ -1,6 +1,6 @@
-<input type = "textbox" id = "search-bar" ng-model = "search" placeholder = "Enter a movie name">
+<input type = "textbox" id = "search-bar" ng-model="formData.text" placeholder = "Enter a movie name">
 			<!--span class="glyphicons glyphicons-search"></span-->
-<button class = "btn btn-primary" ng-click = "mainCtrl.getMovie()">Search Movies</button>
+<button class = "btn btn-primary" ng-click = "saveHistory(); getMovie()" ><span class="glyphicon glyphicon-search"></span>Search Movies</button>
 <div ng-show = "details">
 	<h2>{{details.Title}}</h2><h4>{{details.Year}}</h4>
 	<div class = "quick-view">
@@ -24,7 +24,7 @@
 		<b>Related Movies</b>
 		<ul>
 			<li ng-repeat = "movie in related.Search">
-				<a href=""><b>{{movie.Title}}</b></a>,{{movie.Year}}
+				<a ng-model = "formData.text" href="#related" ng-click = "getMovie()"><b>{{movie.Title}}</b></a>,{{movie.Year}}
 			</li>
 		</ul>			
 	</div>
